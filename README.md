@@ -248,5 +248,19 @@ private void btnBack_Click(object sender, RoutedEventArgs e)
     personalCabWindow.Show();
     Close();
 }
-
+private void SaveBack_Click(object sender, RoutedEventArgs e)
+ {
+     using (var context = new testEntities())
+     {
+         if (_students.StudentID == 0)
+         {
+             context.Students.Add(_students);
+             context.SaveChanges();
+             MessageBox.Show("fds14234123rfffrfrqqwdfdas");
+             PersonalCabWindow personalCabWindow = new PersonalCabWindow();
+             personalCabWindow.Show();
+             Close();
+         }
+     }
+ }
 
